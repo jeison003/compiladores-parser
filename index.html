@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylo.css">
+    <link rel="stylesheet" href="./src/css/style.css">
     <title>PARSER</title>
 
 </head>
@@ -15,7 +15,6 @@
         <h1>Probando lexer</h1>
     </div>
     <div>
-
         <textarea name="codigo" id="input" cols="30" rows="10">
             Evaluar[1+1*2];
             Evaluar[-(1+1*6/3-5+7)];
@@ -30,7 +29,7 @@
         Ejecutar
     </button>
 </body>
-<script src="./gramatica.js"></script>
+<script src="./src/js/gramatica.js"></script>
 <script>
     let input = document.getElementById('input');
     let button = document.getElementById('button');
@@ -40,13 +39,6 @@
         result.value = cod;
         console.log(cod)
     })
-    // var area = document.querySelector("#codi").value;
-    // var pt =document.querySelector("#pista");
-    // pt.innerHTML=area;
-    // var parser = require('./gramatica');
-    // var cod = gramatica.parse(area);
-    // console.log(cod);
-
 </script>
 
 </html>
