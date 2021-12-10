@@ -14,20 +14,18 @@
     </div>
     <div class="wrapper">
       <div>
-        <textarea name="codigo" id="input" cols="30" rows="10">
-                Evaluar[1+1*2];
-                Evaluar[-(1+1*6/3-5+7)];
-                Evaluar[-(1+1*6/3-5+1*-2)];
-                Evaluar[-(1.6+1.45+a)];
-            </textarea
-        >
+        <textarea name="codigo" id="input" cols="30" rows="10">Evaluar[1+1*2];
+Evaluar[-(1+1*6/3-5+7)];
+Evaluar[-(1+1*6/3-5+1*-2)];
+Evaluar[-(1.6+1.45+a)];
+            </textarea>
       </div>
       <div>
         <textarea
           style="margin-left: 10px"
           name="codigo"
           id="result"
-          cols="30"
+          cols="65"
           rows="10"
         >
         </textarea>
@@ -41,9 +39,10 @@
     let button = document.getElementById("button");
     let result = document.getElementById("result");
     button.addEventListener("click", () => {
-      let compilado = gramatica.parse(input.value);
-      result.value = compilado;
-      console.log(compilado);
+      result.value = ""
+      let res = gramatica.parse(input.value);
+    
+      console.log(res);
     });
   </script>
 </html>
