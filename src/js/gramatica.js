@@ -172,7 +172,7 @@ var gramatica = (function () {
           );
           break;
         case 5:
-            salidaConsola.value += `El  valor de la expresion es: ${$$[$0 - 2]} \n`
+            salidaConsola.value += `El  valor de la expresión es: ${$$[$0 - 2]} \n`
           console.log("El valor de la expresión es: " + $$[$0 - 2]);
           break;
         case 6:
