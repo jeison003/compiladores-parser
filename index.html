@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <title>PARSER</title>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div>
-        <h1>Probando lexer</h1>
+      <h1>Probando lexer</h1>
     </div>
-    <div>
+    <div class="wrapper">
+      <div>
         <textarea name="codigo" id="input" cols="30" rows="10">
-            Evaluar[1+1*2];
-            Evaluar[-(1+1*6/3-5+7)];
-            Evaluar[-(1+1*6/3-5+1*-2)];
-            Evaluar[-(1.6+1.45+a)];
+                Evaluar[1+1*2];
+                Evaluar[-(1+1*6/3-5+7)];
+                Evaluar[-(1+1*6/3-5+1*-2)];
+                Evaluar[-(1.6+1.45+a)];
+            </textarea
+        >
+      </div>
+      <div>
+        <textarea
+          style="margin-left: 10px"
+          name="codigo"
+          id="result"
+          cols="30"
+          rows="10"
+        >
         </textarea>
-        <textarea style="margin-left: 10px;" name="codigo" id="result" cols="30" rows="10">
-           
-        </textarea>
+      </div>
     </div>
-    <button id="button">
-        Ejecutar
-    </button>
-</body>
-<script src="./src/js/gramatica.js"></script>
-<script>
-    let input = document.getElementById('input');
-    let button = document.getElementById('button');
-    let result = document.getElementById('result');
-    button.addEventListener('click', () => {
-        let cod = gramatica.parse(input.value);
-        result.value = cod;
-        console.log(cod)
-    })
-</script>
-
+    <button id="button">Ejecutar</button>
+  </body>
+  <script src="./src/js/gramatica.js"></script>
+  <script>
+    let input = document.getElementById("input");
+    let button = document.getElementById("button");
+    let result = document.getElementById("result");
+    button.addEventListener("click", () => {
+      let compilado = gramatica.parse(input.value);
+      result.value = compilado;
+      console.log(compilado);
+    });
+  </script>
 </html>

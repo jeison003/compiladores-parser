@@ -71,8 +71,9 @@
     recoverable: (boolean: TRUE when the parser has a error recovery rule available for this particular error)
   }
 */
+//let salidaConsola = '';
 var gramatica = (function(){
-var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,4],$V1=[1,5],$V2=[1,10],$V3=[1,11],$V4=[1,12],$V5=[1,13],$V6=[1,16],$V7=[1,15],$V8=[1,17],$V9=[1,18],$Va=[10,12,13,14,15,19],$Vb=[10,12,13,19];
+var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v); return o},$V0=[1,4],$V1=[1,5],$V2=[1,10],$V3=[1,11],$V4=[1,12],$V5=[1,13],$V6=[1,16],$V7=[1,15],$V8=[1,17],$V9=[1,18],$Va=[10,12,13,14,15,19],$Vb=[10,12,13,19];
 var parser = {trace: function trace () { },
 yy: {},
 symbols_: {"error":2,"ini":3,"instrucciones":4,"EOF":5,"instruccion":6,"REVALUAR":7,"CORIZQ":8,"expresion":9,"CORDER":10,"PTCOMA":11,"MENOS":12,"MAS":13,"POR":14,"DIVIDIDO":15,"ENTERO":16,"DECIMAL":17,"PARIZQ":18,"PARDER":19,"$accept":0,"$end":1},
@@ -88,8 +89,8 @@ case 4:
 break;
 case 5:
 
-		console.log('El valor de la expresión es: ' + $$[$0-2]);
-	
+   // salidaConsola += 'El valor de la expresión es: ' + $$[$0-2];
+	console.log('El valor de la expresión es: ' + $$[$0-2]);
 break;
 case 6:
  this.$ = $$[$0] *-1; 
@@ -728,22 +729,30 @@ break;
 rules: [/^(?:Evaluar\b)/i,/^(?:;)/i,/^(?:\()/i,/^(?:\))/i,/^(?:\[)/i,/^(?:\])/i,/^(?:\+)/i,/^(?:-)/i,/^(?:\*)/i,/^(?:\/)/i,/^(?:[ \r\t]+)/i,/^(?:\n)/i,/^(?:[0-9]+(\.[0-9]+)?\b)/i,/^(?:[0-9]+\b)/i,/^(?:$)/i,/^(?:.)/i],
 conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],"inclusive":true}}
 });
+
 return lexer;
 })();
 parser.lexer = lexer;
 function Parser () {
+   
   this.yy = {};
 }
 Parser.prototype = parser;parser.Parser = Parser;
+
 return new Parser;
 })();
 
 
 if (typeof require !== 'undefined' && typeof exports !== 'undefined') {
+ 
 exports.parser = gramatica;
 exports.Parser = gramatica.Parser;
-exports.parse = function () { return gramatica.parse.apply(gramatica, arguments); };
+exports.parse = function () {
+   
+     return gramatica.parse.apply(gramatica, arguments); 
+    };
 exports.main = function commonjsMain (args) {
+ 
     if (!args[1]) {
         console.log('Usage: '+args[0]+' FILE');
         process.exit(1);
